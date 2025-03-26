@@ -1,5 +1,4 @@
-*
-{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -9,36 +8,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #33333315;
+  background-color: #18230f2d;
   backdrop-filter: blur(10px);
   padding: 10px 20px;
-   position: relative;
-   top: 5%;
-   margin-left: 2rem;
-   margin-right: 2rem;
+  position: relative;
+  top: 5%;
+  margin-left: 2rem;
+  margin-right: 2rem;
   border-radius: 10px;
   height: max-content;
-  /* border: 3px solid; */
   position: sticky;
-  top: 10px;
+  z-index: 100;
+
+
 }
 
-.navbar-logo a
-{
-  font-size: 3vw !important ;
+.navbar-logo a {
+  font-size: 3vw !important;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #F4F6FF !important;
 }
 
 .navbar a {
-  text-decoration: none; /* Remove underlines */
-  color: white; /* Set link color */
-  margin: 0 10px; /* Add spacing between links */
-  font-size: 1vw; /* Adjust font size */
-  transition: color 0.3s ease; /* Add a hover effect */
+  text-decoration: none;
+  /* Remove underlines */
+  color: #F4F6FF;
+  margin: 0 10px;
+  /* Add spacing between links */
+  font-size: 1.3vw;
+  /* Adjust font size */
+  transition: color 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+  /* Add a hover effect */
 }
-
-
-
-
 
 
 

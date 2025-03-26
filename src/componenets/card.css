@@ -4,35 +4,369 @@
   gap: 20px;
   justify-content: center;
   margin: 3rem;
- 
+  /* height: ; */
+
+
 }
 
+/* From Uiverse.io by andrew-demchenk0 */
+/* before adding the img to the div with the 
+"card-img" class, remove css styles 
+.card-img .img::before and .card-img .img::after,
+then set the desired styles for .card-img. */
 .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 200px;
+  --font-color: #000000;
+  --font-color-sub: #000000;
+  --bg-color: white;
+  --main-color: #000000;
+  --main-focus: #000000;
+  width: 230px;
+  height: max-content;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card:last-child {
+  justify-content: flex-end;
+}
+
+.card-img {
+  /* clear and add new css */
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img img {
+  /* delete */
+  transform: scale(1);
+  position: relative;
+  box-sizing: border-box;
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.card-img .img::before {
+  /* delete */
+  content: '';
+  position: absolute;
+  width: 65px;
+  height: 110px;
+  margin-left: -32.5px;
+  left: 50%;
+  bottom: -4px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.7) 30%, transparent 30%), linear-gradient(to top, transparent 17px, rgba(0, 0, 0, 0.3) 17px, rgba(0, 0, 0, 0.3) 20px, transparent 20px), linear-gradient(to right, black 2px, transparent 2px), linear-gradient(to left, black 2px, transparent 2px), linear-gradient(to top, black 2px, #228b22 2px);
+  background-size: 60% 10%, 100% 100%, 100% 65%, 100% 65%, 100% 50%;
+  background-position: center 3px, center bottom, center bottom, center bottom, center bottom;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+}
+
+.card-img .img::after {
+  /* delete */
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  left: 50%;
+  top: -10px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(80deg, #ffc0cb 45%, transparent 45%), linear-gradient(-175deg, #ffc0cb 45%, transparent 45%), linear-gradient(80deg, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0) 51%), linear-gradient(-175deg, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0) 51%), radial-gradient(circle at center, #ffa6b6 45%, rgba(0, 0, 0, 0.2) 45%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(45deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(65deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 52%, rgba(0, 0, 0, 0) 52%), linear-gradient(22deg, rgba(0, 0, 0, 0) 48%, rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.2) 54%, rgba(0, 0, 0, 0) 54%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 75%, 100% 95%, 100% 60%;
+  background-position: center center;
+  border-top-left-radius: 120px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 70px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
-  transition: transform 0.2s;
+  color: var(--font-color);
 }
 
-.card img {
+.card-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--font-color-sub);
+}
+
+.card-divider {
   width: 100%;
-  height: auto;
+  /* border: 1px solid var(--main-color); */
+  border-radius: 50px;
 }
 
-.card h2 {
-  font-size: 1.2em;
-  margin: 10px 0;
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card p {
-  color: #888;
-  font-size: 1em;
-  margin: 10px 0;
+.card-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--font-color);
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card-price span {
+  font-size: 20px;
+  font-weight: 500;
+
+  color: var(--font-color-sub);
+}
+
+.card-btn {
+  height: 35px;
+
+  border-radius: 5px;
+  padding: 0 15px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+
+}
+
+.card-btn svg {
+  width: 100%;
+  height: 100%;
+
+  transition: all 0.3s;
+}
+
+.card-img:hover {
+  transform: translateY(-3px);
+}
+
+.card-btn:hover {
+  border: 2px solid var(--main-focus);
+}
+
+.card-btn:hover svg {
+  fill: var(--main-focus);
+}
+
+.card-btn:active {
+  transform: translateY(3px);
+}
+
+
+
+/* velocityyyyyyyyyyyyyy    cssss */
+
+
+.velocity-container {
+  margin: 3rem;
+  margin-top: 5rem;
+  color: #011801;
+
+}
+
+
+.main-heading {
+  font-size: 3vw;
+  color: #011801 !important;
+  padding: 3rem;
+
+}
+
+
+.sec-card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+
+}
+
+.title {
+  width: 20rem;
+}
+
+.sec-one-card, .sec-two-card {
+  border: 1px solid;
+  padding: 2rem;
+  border-radius: 7px;
+
+
+}
+
+.sec-card-container img {
+  border-radius: 10px;
+  height: 20vw;
+}
+
+.sec-card-container .heading {
+  font-size: 3vw;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+.sec-card-container .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sec-card-container button {
+  font-size: larger;
+  padding: 0.5rem;
+  width: 7vw;
+  background-color: #011801;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.sec-card-container .price {
+  font-size: 3vw;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.decript-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  padding: 6rem;
+  margin-top: 1rem;
+  color: #011801 !important;
+  /* border: 1px solid; */
+}
+
+.thrd-card-sec .cards-container {
+  display: flex;
+  /* Arrange items in a row */
+  flex-wrap: nowrap;
+  /* Prevent wrapping to the next line */
+  gap: 20px;
+  /* Add spacing between cards */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  justify-content: flex-start;
+  /* Align cards to the start of the row */
+  align-items: flex-start;
+  /* Align cards at the top */
+  margin-left: 6rem;
+  scrollbar-width: none;
+  /* Hide scrollbar in Firefox */
+  height: 30rem;
+
+}
+
+.thrd-card-sec .cards-container::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar in Chrome, Edge, and Safari */
+}
+
+
+
+
+
+
+
+.text-prod-container {
+
+  margin-top: 15rem;
+
+}
+
+.text-prod-container1, .text-prod-container2 {
+  display: flex;
+
+  justify-content: space-around;
+  font-size: 8vw;
+  align-items: center;
+  margin: 1.5rem;
+
+  border-radius: 7px;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.text-prod-container1 img, .text-prod-container2 img {
+  height: 25vw;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+.text-prod-container1 .title, .text-prod-container2 .title {
+  font-size: 1.5vw;
+  width: 40rem;
+}
+
+.text-prod-container1 .btn, .text-prod-container2 .btn {
+
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.text-prod-container1 button, .text-prod-container2 button {
+  font-size: large;
+  padding: 0.5rem;
+  width: 10vw;
+  background-color: #011801;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.text-prod-container1 .price, .text-prod-container2 .price {
+  font-size: 2vw;
+  border: 1p;
+}
+
+/* Countersssssssss */
+
+
+
+.counter-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 3vw;
+   margin-top: 5rem;
+   
+  
+}
+
+
+.count
+{
+  border: 1px solid;
+  padding: 1rem;
+  border-radius: 7px;
+  background-color: #011801;
+  color:#F2F7A1;
 }

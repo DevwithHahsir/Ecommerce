@@ -1,19 +1,24 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./navbar.css";
-import { href, Link } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { GoHome } from "react-icons/go";
+import { FaShoppingCart, FaPhoneAlt } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 import GooeyNav from "../animations/GooeyNav";
 
 export default function Navbar() {
   // Access the count from the Redux state
-  // const count = useSelector((state) => state.cart.count);
+  const count = useSelector((state) => state.cart.count);
 
   const items = [
-    { label: "Home", href: "/" },
-    // { label: "Cart", href: "/cart" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", icon: <GoHome />, href: "/" },
+    { label: "Trending", icon: <GoHome />, href: "/" },
+    { label: "Top Selling", icon: <GoHome />, href: "/" },
+    { label: "Contact", icon: <FaPhoneAlt />, href: "/" },
+    { label: "About US", icon: <FaPhoneAlt />, href: "/" },
+    
   ];
 
   return (
@@ -24,7 +29,14 @@ export default function Navbar() {
 
       <div style={{ position: "relative" }}>
         <GooeyNav
-          items={items}
+          items={items.map((item) => ({
+            ...item,
+            label: (
+              <>
+                {item.icon} {item.label}
+              </>
+            ),
+          }))}
           animationTime={600}
           pCount={15}
           minDistance={20}
@@ -36,7 +48,9 @@ export default function Navbar() {
       </div>
 
       <div className="cart">
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart">
+        <FaShoppingCart /> {count}
+        </Link>
       </div>
     </nav>
   );

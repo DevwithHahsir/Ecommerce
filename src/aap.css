@@ -1,4 +1,11 @@
+html
+{
+    scroll-behavior: smooth;
+}
+
 .appmaincontainer
 {
-    background-color: #FFDFEF;
+    
+    background-color: #F2F7A1;
+   
 }

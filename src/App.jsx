@@ -9,7 +9,7 @@ function App() {
     <div className="appmaincontainer">
       {/* Navbar is always visible */}
       <Navbar />
-      <Herosection/>
+     
 
       {/* Define routes for the application */}
       <Routes>
