@@ -16,10 +16,13 @@ function Herosection() {
           <div className="herotext-btn">
             <div className="hero-text" data-aos="fade-right">Be iconic, be unforgettable.</div>
             <div className="btn">
+              <a href="#trending">
+
               <button data-aos="fade-up">
                 Start Shopping <br />
                 <br /> <CiLocationArrow1 />
               </button>
+              </a>
             </div>
           </div>
        

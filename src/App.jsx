@@ -14,8 +14,7 @@ function App() {
       {/* Define routes for the application */}
       <Routes>
         <Route path="/" element={<Cards />} /> {/* Home route */}
-        <Route path="/cart" element={<Cart />} /> {/* Cart route */}
-        {/* <Route path="/" element={<Herosection/>}/> */}
+        <Route path="/cart" element={<Cart />} /> {/* Cart route */}    
       </Routes>
 
         

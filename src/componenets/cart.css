@@ -1,0 +1,172 @@
+.Main-container
+{
+    
+    height: max-content
+}
+
+
+
+.cart-main-container
+{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    margin-top: 7rem;
+    /* height: 50; */
+}
+
+
+.cart-cards-container
+{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 55rem;
+}
+
+.cart-card
+{
+    margin: 1rem;
+    width: max-content;
+}
+
+.EmptyCart
+{
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+
+
+.cart-card img
+{
+    transform: scale(1);
+    position: relative;
+    box-sizing: border-box;
+    width: 7rem;
+    height: 7rem;
+    
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.cart-btns
+{
+    display: flex;
+    justify-content:space-around;
+    /* align-items: center; */
+}
+
+.cart-btns button
+{ 
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    
+    border: 1px solid;
+    font-size:small;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.cart-price,.cart-title
+{
+   
+    display: flex;
+    justify-content: center;
+    font-size: small;
+}
+.card-quantity
+{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+
+    border: 1px solid;
+    font-size: small;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+
+/* billing section */
+
+.bil-container
+
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 33%;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.table-container
+{
+   
+    width: 100%;
+}
+table
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+table tr th
+{
+    padding:  1rem;
+}
+table tr td
+{ 
+    padding: 1rem;
+
+}
+
+
+.total-bill
+{
+    
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    justify-content: space-between;
+    margin-right: 2rem;
+    padding: 2rem;
+}
+
+
+
+.payment-btn
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: large;
+}
+
+.payment-btn button
+{
+    padding: 0.4rem;
+    font-size: large;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background-color: #011801;
+    color: antiquewhite;
+    cursor: pointer;
+}
+.payment-btn button:hover
+{
+    background-color: #033f03;
+}

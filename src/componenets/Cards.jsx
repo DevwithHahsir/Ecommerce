@@ -27,7 +27,7 @@ export default function Cards() {
   const addCart = (img, title, price) => {
     const item = {
       id: uuidv4(),
-      img: img,
+      image: img,
       title: title,
       price: price,
     };
@@ -45,11 +45,11 @@ export default function Cards() {
     <>
       <Herosection />
 
-      <div className="cards-container">
+      <div className="cards-container" id="home">
         {Products.map((product, id) => (
           <div className="card" key={id}>
             <div className="card-img">
-              <img src={product.image} alt={product.title} />
+              <img src={product.image} alt={product.title} loading="lazy" />
             </div>
             <div className="card-title">{product.title}</div>
             <div className="card-subtitle">{product.description}</div>
@@ -61,7 +61,7 @@ export default function Cards() {
               <button
                 className="card-btn"
                 onClick={() =>
-                  addCart(product.img, product.title, product.price)
+                  addCart(product.image, product.title, product.price)
                 }
               >
                 <svg
@@ -91,8 +91,8 @@ export default function Cards() {
 
       {/* 2 cards container/////////////////////// */}
 
-      <div className="main-heading">
-        <marquee behavior="scroll" direction="">
+      <div className="main-heading" id="trending">
+        <marquee behavior="scroll" direction="" scrollamount="20">
           {" "}
           <h1>Top Treanding</h1>{" "}
         </marquee>
@@ -116,7 +116,7 @@ export default function Cards() {
             <button
               onClick={() =>
                 addCart({
-                  id: uuidv4,
+                  
                   title: "Headphone",
                   price: 199.99,
                   image:
@@ -216,9 +216,9 @@ export default function Cards() {
 
       {/* textttttttttttttttt  &&&&&&&&&&&&&&   pRODUCTTTTTTTTTTTTTTT -CONTAINERRRRRRRRR */}
 
-      <div className="text-prod-container">
+      <div className="text-prod-container" id="top-selling">
         <div className="main-heading">
-          <marquee behavior="scroll" direction="">
+          <marquee behavior="scroll" direction="" scrollamount="20">
             {" "}
             <h1>Top Selling Products</h1>{" "}
           </marquee>
@@ -399,7 +399,7 @@ export default function Cards() {
 
 
 
-      <div className="fotter">
+      <div className="fotter" id="contact">
       <Fotter/>
       </div>
     </>

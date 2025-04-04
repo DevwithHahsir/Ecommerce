@@ -1,50 +1,94 @@
+/* General Reset */
 * {
-  padding: 0px;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #18230f2d;
-  backdrop-filter: blur(10px);
+  background-color: #18230f2d; /* Transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
   padding: 10px 20px;
-  position: relative;
-  top: 5%;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  border-radius: 10px;
-  height: max-content;
   position: sticky;
+  top: 0;
   z-index: 100;
-
-
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Navbar Logo */
 .navbar-logo a {
-  font-size: 3vw !important;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #F4F6FF !important;
-}
-
-.navbar a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f4f6ff;
   text-decoration: none;
-  /* Remove underlines */
-  color: #F4F6FF;
-  margin: 0 10px;
-  /* Add spacing between links */
-  font-size: 1.3vw;
-  /* Adjust font size */
-  transition: color 0.3s ease;
-  font-family: 'Times New Roman', Times, serif;
-  /* Add a hover effect */
 }
 
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
 
+.navbar-links a {
+  text-decoration: none;
+  color: #f4f6ff;
+  font-size: 1rem;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
+/* Active Link */
+.navbar-links a.active {
+  color: #ffcc00; /* Highlight active link */
+  font-weight: bold;
+}
 
+/* Hover Effect */
+.navbar-links a:hover {
+  color: #ffcc00;
+}
+
+/* Cart Section */
+.cart a {
+  text-decoration: none;
+  color: #f4f6ff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart a:hover {
+  color: #ffcc00;
+}
+.navbar-links a.active {
+  color: #ffcc00; /* Highlight active link */
+  font-weight: bold; /* Make the active link bold */
+  border-bottom: 2px solid #ffcc00; /* Add a bottom border for emphasis */
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cart {
+    margin-top: 10px;
+  }
+}
 
 :root {
   --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
@@ -243,4 +287,15 @@
     transform: scale(0);
     opacity: 0;
   }
+}
+
+/* Active state for GooeyNav items */
+.gooey-nav-item.active {
+  background-color: #007bff;
+  color: white !important;
+}
+
+/* Add this if your sections need padding to account for fixed navbar */
+.section {
+  padding-top: 80px;
 }

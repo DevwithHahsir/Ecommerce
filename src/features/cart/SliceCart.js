@@ -19,10 +19,19 @@ export const cartSlice = createSlice({
       localStorage.setItem("count", JSON.stringify(state.count)); // Save count to localStorage
     },
 
-    removeCart:(state,action)=>{
-      state.count -= 1; // Increment count
-      localStorage.setItem("count", JSON.stringify(state.count));
-
+    removeCart: (state, action) => {
+      // Find the index of the item to be removed
+      const index = state.value.findIndex((item) => item.id === action.payload.id);
+    
+      if (index !== -1) {
+        // Remove the item from the cart
+        state.value.splice(index, 1);
+        localStorage.setItem("data", JSON.stringify(state.value)); // Update localStorage
+    
+        // Decrement the count
+        state.count -= 1;
+        localStorage.setItem("count", JSON.stringify(state.count)); // Update localStorage
+      }
     },
  
   },
